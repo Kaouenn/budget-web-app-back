@@ -35,4 +35,20 @@ router.get("/expense", async (req, res) => {
   }
 });
 
+router.post("/expense/remove", async (req, res) => {
+  try {
+    const userToDelete = await Expense.find().populate("user");
+
+    // Vérifier que l'objet a bien été trouvé
+    // if (department !== null && department !== undefined && department !== false && department !== 0 && department !== "" ) {
+
+    // Enregistrer les modifications
+    await userToDelete.remove();
+
+    return res.json("user deleted");
+  } catch (error) {
+    return res.status(400).json({ message: error.message });
+  }
+});
+
 module.exports = router;
