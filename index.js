@@ -7,7 +7,6 @@ app.use(cors());
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
-
 app.use(bodyParser.json());
 
 if (process.env.MONGODB_URI) {
@@ -40,7 +39,7 @@ app.get("/", (req, res) => {
   res.send(
     [
       `<pre style="line-height: 1.5;margin:auto; text-align:center;font-size: 15;padding-top: 5%" >`,
-      `<h2 style="margin: 0" >Certification Le REACTEUR - François LAVAL</h2>`,
+      `<h2 style="margin: 0" >Budget-web-app - LAVAL François</h2>`,
       `<b>GET <a href="/">/</a></b>`,
       `return: this help`,
       "",
